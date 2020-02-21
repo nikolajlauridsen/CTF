@@ -10,8 +10,7 @@ def jwt2john(jwt):
     :param jwt: JWT string to johnify
     :return: johnified JWT string
     """
-    jwt_bytes = jwt
-    parts = jwt_bytes.split('.')
+    parts = jwt.split('.')
 
     data = parts[0] + '.' + parts[1]
     signature = hexlify(base64url_decode(parts[2]))
